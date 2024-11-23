@@ -5,14 +5,14 @@ const ListUsers = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("https://67288605270bd0b97555ef13.mockapi.io/:sample/users")
+    fetch("https://67288605270bd0b97555ef13.mockapi.io/sample/users")
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   const deleteUser = (id) => {
-    fetch(`https://67288605270bd0b97555ef13.mockapi.io/:sample/users/${id}`, {
+    fetch(`https://67288605270bd0b97555ef13.mockapi.io/sample/users/${id}`, {
       method: "DELETE",
     })
       .then(() => setUsers(users.filter((user) => user.id !== id)))
