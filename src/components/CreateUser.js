@@ -23,7 +23,7 @@ const CreateUser = () => {
       address: addressRef.current.value,
     };
 
-    fetch("http://localhost:3001/users", {
+    fetch("https://67288605270bd0b97555ef13.mockapi.io/:sample/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
