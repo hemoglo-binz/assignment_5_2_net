@@ -6,7 +6,7 @@ const UserDetails = () => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    fetch(`https://67288605270bd0b97555ef13.mockapi.io/sample/users/${id}`)
+    fetch(`https://67288605270bd0b97555ef13.mockapi.io/sample/${id}`)
       .then((response) => response.json())
       .then((data) => setUser(data))
       .catch((error) => console.error("Error fetching user:", error));

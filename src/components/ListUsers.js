@@ -5,7 +5,7 @@ const ListUsers = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("https://67288605270bd0b97555ef13.mockapi.io/sample/users")
+    fetch("https://67288605270bd0b97555ef13.mockapi.io/sample")
       .then((response) => response.json())
       .then((data) => {
         if (Array.isArray(data)) {
@@ -18,7 +18,7 @@ const ListUsers = () => {
   }, []);
 
   const deleteUser = (id) => {
-    fetch(`https://67288605270bd0b97555ef13.mockapi.io/sample/users/${id}`, {
+    fetch(`https://67288605270bd0b97555ef13.mockapi.io/sample/${id}`, {
       method: "DELETE",
     })
       .then(() => setUsers(users.filter((user) => user.id !== id)))

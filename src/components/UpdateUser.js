@@ -8,7 +8,7 @@ const UpdateUser = () => {
   const [changeCount, setChangeCount] = useState(0);
 
   useEffect(() => {
-    fetch(`https://67288605270bd0b97555ef13.mockapi.io/sample/users/${id}`)
+    fetch(`https://67288605270bd0b97555ef13.mockapi.io/sample/${id}`)
       .then((response) => response.json())
       .then((data) => setUser(data))
       .catch((error) => console.error("Error loading user:", error));
@@ -19,7 +19,7 @@ const UpdateUser = () => {
     setUser({ ...user, [name]: value });
     setChangeCount((prev) => prev + 1);
 
-    fetch(`https://67288605270bd0b97555ef13.mockapi.io/sample/users/${id}`, {
+    fetch(`https://67288605270bd0b97555ef13.mockapi.io/sample/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...user, [name]: value }),
