@@ -7,7 +7,13 @@ const ListUsers = () => {
   useEffect(() => {
     fetch("https://67288605270bd0b97555ef13.mockapi.io/sample/users")
       .then((response) => response.json())
-      .then((data) => setUsers(data))
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setUsers(data);
+        } else {
+          console.error("Data format is not an array:", data);
+        }
+      })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
